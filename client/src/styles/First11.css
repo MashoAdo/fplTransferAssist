@@ -1,33 +1,38 @@
 .first11-section {
   padding: 2rem;
   width: 100%;
-  border: 2px solid black;
   font-family: "Source Sans Pro", sans-serif;
   font-size: 13px;
   height: 100vh;
 }
 
-.first11-container {
-  padding-bottom: 2rem;
+.pitch-container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  border: 2px solid red;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background-color: aquamarine;
 }
 
 .goalkeeper-container {
-  border: 2px solid purple;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
 }
 
 .player-info {
@@ -96,5 +101,109 @@
       -ms-flex-align: center;
           align-items: center;
   width: 100%;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+}
+
+.pitch {
+  background: repeating-linear-gradient(rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.05) 20%, transparent 20%, transparent 40%);
+  background-color: #3aaa35;
+  width: 100%;
+  height: 29.5rem;
+  padding: 1.5rem;
+  padding-bottom: 0;
+  position: relative;
+}
+
+.pitch::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 25%;
+  width: 100%;
+  z-index: 1;
+  /* FF3.6-15 */
+  /* Chrome10-25,Safari5.1-6 */
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(58, 170, 53, 0)), to(#3aaa35));
+  background: linear-gradient(to bottom, rgba(58, 170, 53, 0) 0%, #3aaa35 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="#003aaa35", endColorstr="#3aaa35", GradientType=0 );
+  /* IE6-9 */
+}
+
+.pitch .lines {
+  border: 0.1875rem solid rgba(255, 255, 255, 0.3);
+  border-bottom: transparent;
+  height: calc(100% - 0.375rem);
+  display: block;
+  position: relative;
+}
+
+.pitch .corner {
+  width: 1rem;
+  height: 1rem;
+  display: block;
+  position: absolute;
+  border: 0.1875rem solid rgba(255, 255, 255, 0.3);
+  border-left: 0.1875rem solid transparent;
+  border-top: 0.1875rem solid transparent;
+  border-bottom: 0.1875rem solid transparent;
+}
+
+.pitch .corner.corner-top-left {
+  top: -0.6875rem;
+  left: -0.6875rem;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+.pitch .corner.corner-top-right {
+  top: -0.6875rem;
+  right: -0.6875rem;
+  -webkit-transform: rotate(135deg);
+          transform: rotate(135deg);
+}
+
+.pitch .goalBox {
+  border: 0.1875rem solid rgba(255, 255, 255, 0.3);
+  border-top: transparent;
+  margin: 0 auto;
+  width: 11.87rem;
+  height: 5.5rem;
+  position: relative;
+}
+
+.pitch .goalBox::before {
+  content: "";
+  display: block;
+  border: 0.1875rem solid rgba(255, 255, 255, 0.3);
+  border-top: transparent;
+  width: 6.875rem;
+  height: 3rem;
+  margin: 0 auto;
+}
+
+.pitch .half {
+  width: 100%;
+  height: 3.75rem;
+  border-top: 0.1875rem solid rgba(255, 255, 255, 0.3);
+  position: absolute;
+  bottom: 0;
+}
+
+.pitch .half::before {
+  content: "";
+  display: block;
+  border: 0.1875rem solid rgba(255, 255, 255, 0.3);
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 5rem;
+  height: 5rem;
+  margin: -3.55rem auto 0;
+  border-radius: 7rem;
 }
 /*# sourceMappingURL=First11.css.map */
