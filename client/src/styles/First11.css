@@ -1,9 +1,7 @@
 .first11-section {
   padding: 2rem;
   width: 100%;
-  font-family: "Source Sans Pro", sans-serif;
   font-size: 13px;
-  height: 100vh;
 }
 
 .pitch-container {
@@ -101,11 +99,6 @@
       -ms-flex-align: center;
           align-items: center;
   width: 100%;
-}
-
-body {
-  padding: 0;
-  margin: 0;
 }
 
 .pitch {
