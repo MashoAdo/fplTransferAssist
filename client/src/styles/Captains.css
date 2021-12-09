@@ -4,10 +4,27 @@
   border: 2px solid red;
 }
 
+.captains-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
 .captain {
   width: 250px;
   -webkit-box-shadow: 0px 5px 10px #cccccc;
           box-shadow: 0px 5px 10px #cccccc;
+  margin-right: 50px;
 }
 
 .captain-info {
@@ -39,10 +56,9 @@
 
 .captain-image {
   background: url("https://i.pinimg.com/236x/b9/bd/10/b9bd10217b17480b17c22bae6888d6da.jpg");
-  height: 280px;
+  height: 200px;
   width: 100%;
   background-repeat: no-repeat;
-  background-position: center;
   background-size: cover;
 }
 
