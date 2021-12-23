@@ -4,7 +4,7 @@ import "../styles/First11.css";
 function First11() {
 	return (
 		<section className="first11-section">
-			<h2 className="section-heading">Select Your Best 11</h2>
+			<h1 className="section-heading">Most in Form 11</h1>
 			<div className="pitch-container">
 				<div className="pitch">
 					{/* first 11 container */}
@@ -64,7 +64,6 @@ function First11() {
 								</div>
 							</div>
 						</div>
-
 						<div className="midfielders-container">
 							<div className="midfielders">
 								<img src="" alt="" />
