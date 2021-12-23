@@ -14,14 +14,17 @@ function Captains() {
 				className="captains-container"
 				slidesPerView={1.3}
 				onSwiper={setThumbsSwiper}
-				breakpoints={
-					{
-						// when window is above 800px
-					800: {
-						slidesPerView=3
-					}
-					}
-				}
+				breakpoints={{
+					// set breakpoints to enhance responsiveness
+					// when window width is >= 750px
+					750: {
+						slidesPerView: 2,
+					},
+					// when window width is >= 950px
+					950: {
+						slidesPerView: 3,
+					},
+				}}
 			>
 				<SwiperSlide>
 					<div className="captain">
