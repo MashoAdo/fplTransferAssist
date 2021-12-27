@@ -3,6 +3,8 @@ import axios from "axios";
 import First11 from "./Components/First11";
 import Captains from "./Components/Captains";
 import "./styles/ReusableStyles.css";
+import Top5Gks from "./Components/Top5Gks";
+import Top5Defenders from "./Components/Top5Defenders";
 
 function App() {
 	const initialState = {
@@ -58,6 +60,11 @@ function App() {
 			{/* {loading ? "Loading" : <First11 />} */}
 			<First11 />
 			<Captains />
+			<h1 className="section-heading" style={{ margin: "2rem" }}>
+				Top 5 Players in Every Category
+			</h1>
+			<Top5Gks />
+			<Top5Defenders />
 		</div>
 	);
 }
