@@ -20,8 +20,8 @@ function First11() {
 						</span>
 						<div className="goalBox">
 							{/* <!-- the goal box goes here --> */}
-							<div className="goalkeeper-container">
-								<div className="goalkeeper">
+							<div className="gk-container">
+								<div className="gk">
 									<img src="" alt="" />
 									<div className="f11-player-info">
 										<div className="f11-player-name">Mendy</div>
@@ -30,8 +30,8 @@ function First11() {
 								</div>
 							</div>
 						</div>
-						<div className="defender-container">
-							<div className="defender">
+						<div className="def-container">
+							<div className="def">
 								<img src="" alt="" />
 								<div className="f11-player-info">
 									<div className="f11-player-name">Cancelo</div>
@@ -39,7 +39,7 @@ function First11() {
 								</div>
 							</div>
 
-							<div className="defender">
+							<div className="def">
 								<img src="" alt="" />
 								<div className="f11-player-info">
 									<div className="f11-player-name">James</div>
@@ -47,7 +47,7 @@ function First11() {
 								</div>
 							</div>
 
-							<div className="defender">
+							<div className="def">
 								<img src="" alt="" />
 								<div className="f11-player-info">
 									<div className="f11-player-name">Livramento</div>
@@ -55,7 +55,7 @@ function First11() {
 								</div>
 							</div>
 
-							<div className="defender">
+							<div className="def">
 								<img src="" alt="" />
 								<div className="f11-player-info">
 									<div className="f11-player-name">Trent</div>
@@ -63,32 +63,30 @@ function First11() {
 								</div>
 							</div>
 						</div>
-						<div className="midfielders-container">
-							<div className="midfielders">
+						<div className="mid-container">
+							<div className="mid">
 								<img src="" alt="" />
 								<div className="f11-player-info">
 									<div className="f11-player-name">Gilmour</div>
 									<div className="f11-next-opponent">WHU(A)</div>
 								</div>
 							</div>
-
-							<div className="midfielders">
+							<div className="mid">
 								<img src="" alt="" />
 								<div className="f11-player-info">
-									<div className="f11-player-name">Son</div>
+									<div className="f11-player-name">Saka</div>
 									<div className="f11-next-opponent">WHU(A)</div>
 								</div>
 							</div>
 
-							<div className="midfielders">
+							<div className="mid">
 								<img src="" alt="" />
 								<div className="f11-player-info">
-									<div className="f11-player-name">Salah</div>
+									<div className="f11-player-name">Ordegaard</div>
 									<div className="f11-next-opponent">WHU(A)</div>
 								</div>
 							</div>
-
-							<div className="midfielders">
+							<div className="mid">
 								<img src="" alt="" />
 								<div className="f11-player-info">
 									<div className="f11-player-name">Gallagher</div>
