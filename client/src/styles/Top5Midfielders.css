@@ -1,0 +1,34 @@
+.midfielders-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.midfielders {
+  width: 250px;
+}
+
+.midfielders-image {
+  background: url("https://media.gettyimages.com/photos/kevin-de-bruyne-of-manchester-city-celebrates-after-scoring-his-teams-picture-id1207355415?k=20&m=1207355415&s=612x612&w=0&h=otfq7rFqKA7i7FXXN1_wyFeSFSoXUt2tsSbcTdLBkKI=");
+  height: 200px;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+@media screen and (min-width: 750px) {
+  .midfielders {
+    width: 200px;
+  }
+}
+/*# sourceMappingURL=Top5Midfielders.css.map */
