@@ -16,26 +16,26 @@
           align-items: center;
 }
 
-.player-info {
+.f11-player-info {
   padding: 0.2em 0.5em;
   text-align: center;
   font-size: 1.2em;
 }
 
-.player-name {
+.f11-player-name {
   background-color: #e9e3e3;
   padding: 0.2em 0.5em;
   font-weight: 600;
 }
 
-.next-opponent {
+.f11-next-opponent {
   background-color: #34ff78;
   border-radius: 0 0 5px 5px;
   padding: 0.2em 0.5em;
   font-weight: 400;
 }
 
-.goalkeeper-container {
+.gk-container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -51,7 +51,7 @@
   width: 100%;
 }
 
-.defender-container {
+.def-container {
   margin: 1.5rem 0;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -68,7 +68,7 @@
   width: 100%;
 }
 
-.midfielders-container {
+.mid-container {
   margin-bottom: 1.5rem;
   display: -webkit-box;
   display: -ms-flexbox;
