@@ -1,5 +1,4 @@
 import React from "react";
-import "../styles/ReusableStyles.css";
 import "../styles/Captains.css";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper-bundle.css";
@@ -10,15 +9,24 @@ function Captains() {
 			<h1 className="section-heading">Top 3 Captains this Week</h1>
 			<Swiper
 				className="captains-container"
-				slidesPerView={1.3}
+				slidesPerView={1.25}
 				breakpoints={{
 					// set breakpoints to enhance responsiveness
+					// when window width is >= 600px
+					600: {
+						slidesPerView: 1.5,
+					},
 					// when window width is >= 750px
 					750: {
 						slidesPerView: 2,
 					},
-					// when window width is >= 950px
-					950: {
+					// when window width is >= 900px
+					900: {
+						slidesPerView: 2.5,
+						// spaceBetween: "even",
+					},
+					// when window width is >= 100px
+					1000: {
 						slidesPerView: 3,
 						// spaceBetween: "even",
 					},
