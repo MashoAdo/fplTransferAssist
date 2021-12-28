@@ -1,0 +1,34 @@
+.top5Fowards-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.foward {
+  width: 250px;
+}
+
+.foward-image {
+  background: url("https://media.gettyimages.com/photos/romelu-lukaku-of-chelsea-celebrates-after-scoring-their-sides-first-picture-id1339680960?k=20&m=1339680960&s=612x612&w=0&h=_WLS18xKD-DdSakzkM6SL1Nn5SZiksxFlLyaBGViiiU=");
+  height: 200px;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+@media screen and (min-width: 750px) {
+  .foward {
+    width: 200px;
+  }
+}
+/*# sourceMappingURL=Top5Fowards.css.map */
