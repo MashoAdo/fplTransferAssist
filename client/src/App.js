@@ -5,6 +5,10 @@ import Captains from "./Components/Captains";
 import "./styles/ReusableStyles.css";
 import Top5Gks from "./Components/Top5Gks";
 import Top5Defenders from "./Components/Top5Defenders";
+import Top5Midfielders from "./Components/Top5Midfielders";
+import Top5Fowards from "./Components/Top5Fowards";
+import LongtermPlayers from "./Components/LongtermPlayers";
+import HowToUse from "./Components/HowToUse";
 
 function App() {
 	const initialState = {
@@ -65,6 +69,10 @@ function App() {
 			</h1>
 			<Top5Gks />
 			<Top5Defenders />
+			<Top5Midfielders />
+			<Top5Fowards />
+			<LongtermPlayers />
+			<HowToUse />
 		</div>
 	);
 }
