@@ -78,24 +78,51 @@ function HowToUse() {
 						</p>
 					</div>
 
-					<div className="accronym">
+					<div>
 						<h2 className="category-heading">Accronyms</h2>
-						<div>
-							<span>H - </span>
-							<span>The team assigned this accronym is playing at Home</span>
-						</div>
 
-						<div>
-							<span>A - </span>
-							<span>The team assigned this accronym is playing at Away</span>
-						</div>
+						<div className="accronym-container">
+							<div className="accronym-wrapper">
+								<span className="accronym">H - </span>
+								<span>The team assigned this accronym is playing at Home</span>
+							</div>
 
-						<div>
-							<span>Opp. Strength - </span>
-							<span>
-								Opponent Strength rating. A higher number indicate a more
-								difficult opponent
-							</span>
+							<div className="accronyms-wrapper">
+								<span className="accronym">A - </span>
+								<span>The team assigned this accronym is playing at Away</span>
+							</div>
+
+							<div className="accronyms-wrapper">
+								<span className="accronym">Next Opp - </span>
+								<span>
+									Stands for Next Opponent.This is the next team to be played
+									against
+								</span>
+							</div>
+
+							<div className="accronyms-wrapper">
+								<span className="accronym">Opps. FDR -</span>
+								<span>
+									Stands for Opponent Fixture Difficulty Ranking. This refers to
+									the opponent Difficulty rating.A higher number indicate a more
+									difficult opponent
+								</span>
+							</div>
+
+							<div className="accronyms-wrapper">
+								<span className="accronym">Cumulative Opp. FDR - </span>
+								<span>
+									Shows the total Difficulty rating of the next three opponents
+								</span>
+							</div>
+
+							<div className="accronyms-wrapper">
+								<span className="accronym">Opp. Strength - </span>
+								<span>
+									Opponent Strength rating. A higher number indicate a more
+									difficult opponent
+								</span>
+							</div>
 						</div>
 					</div>
 				</div>
