@@ -3,7 +3,19 @@ import "../styles/Top5Gks.css";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper-bundle.css";
 
-function Top5Gks() {
+function Top5Gks({ goalkeepers }) {
+	// sort goalkeeper according to the points per game, opponents strength
+	var top5Gks = goalkeepers
+		.sort((a, b) => {
+			return b.points_per_game - a.points_per_game;
+		})
+		.slice(0, 8)
+		.sort((a, b) => {
+			return a.opponentStrength[0] - b.opponentStrength[0];
+		})
+		.slice(0, 5);
+	console.log(top5Gks);
+
 	return (
 		<section className="players-section top5GKs">
 			<h2 className="category-heading">Goalkeepers</h2>
@@ -37,265 +49,75 @@ function Top5Gks() {
 					},
 				}}
 			>
-				<SwiperSlide>
-					<div className="goalkeeper">
-						<div className="goalkeeper-image"></div>
-						<div className="player-info">
-							<div className="player-name-container">
-								<div className="info-name">
-									<span>Name</span>
-								</div>
-								<div className="player-name">
-									<span>Ramsdale</span>
-								</div>
-							</div>
+				{top5Gks.map((goalkeeper, index) => {
+					return (
+						<SwiperSlide key={index}>
+							<div className="goalkeeper">
+								<div
+									className="goalkeeper-image"
+									style={{
+										background: `url(
+											https://resources.premierleague.com/premierleague/photos/players/110x140/p${goalkeeper.imageString}.png
+										)`,
+										height: "200px",
+										width: " 100%",
+										backgroundRepeat: " no-repeat",
+										backgroundSize: " cover",
+									}}
+								></div>
+								<div className="player-info">
+									<div className="player-name-container">
+										<div className="info-name">
+											<span>Name</span>
+										</div>
+										<div className="player-name">
+											<span>{goalkeeper.web_name}</span>
+										</div>
+									</div>
 
-							<div className="team-container">
-								<div className="info-name">
-									<span>Team</span>
-								</div>
-								<div className="info-stat">
-									<span>ARS</span>
-								</div>
-							</div>
+									<div className="team-container">
+										<div className="info-name">
+											<span>Team</span>
+										</div>
+										<div className="info-stat">
+											<span>{goalkeeper.teamName}</span>
+										</div>
+									</div>
 
-							<div className="form">
-								<div className="info-name">
-									<span>Form</span>
-								</div>
-								<div className="info-stat">
-									<span>8.0</span>
-								</div>
-							</div>
+									<div className="form">
+										<div className="info-name">
+											<span>Form</span>
+										</div>
+										<div className="info-stat">
+											<span>{goalkeeper.form}</span>
+										</div>
+									</div>
 
-							<div className="opponent">
-								<div className="info-name">
-									<span>Opponent</span>
-								</div>
-								<div className="info-stat">
-									<span>WOL(H)</span>
-								</div>
-							</div>
+									<div className="opponent">
+										<div className="info-name">
+											<span>Opponent</span>
+										</div>
+										<div className="info-stat">
+											<span>
+												{goalkeeper.opponentsName[0]}({goalkeeper.homeOrAway[0]}
+												)
+											</span>
+										</div>
+									</div>
 
-							<div className="opponentStrength">
-								<div className="info-name">
-									<span>Opp. Strength</span>
-								</div>
-								<div className="info-stat">
-									<span>3</span>
-								</div>
-							</div>
-						</div>
-					</div>
-				</SwiperSlide>
-
-				<SwiperSlide>
-					<div className="goalkeeper">
-						<div className="goalkeeper-image"></div>
-						<div className="player-info">
-							<div className="player-name-container">
-								<div className="info-name">
-									<span>Name</span>
-								</div>
-								<div className="player-name">
-									<span>Ramsdale</span>
+									<div className="opponentStrength">
+										<div className="info-name">
+											<span>Opp. Strength</span>
+										</div>
+										<div className="info-stat">
+											<span>{goalkeeper.opponentStrength[0]}</span>
+										</div>
+									</div>
 								</div>
 							</div>
-
-							<div className="team-container">
-								<div className="info-name">
-									<span>Team</span>
-								</div>
-								<div className="info-stat">
-									<span>ARS</span>
-								</div>
-							</div>
-
-							<div className="form">
-								<div className="info-name">
-									<span>Form</span>
-								</div>
-								<div className="info-stat">
-									<span>8.0</span>
-								</div>
-							</div>
-
-							<div className="opponent">
-								<div className="info-name">
-									<span>Opponent</span>
-								</div>
-								<div className="info-stat">
-									<span>WOL(H)</span>
-								</div>
-							</div>
-
-							<div className="opponentStrength">
-								<div className="info-name">
-									<span>Opp. Strength</span>
-								</div>
-								<div className="info-stat">
-									<span>3</span>
-								</div>
-							</div>
-						</div>
-					</div>
-				</SwiperSlide>
-
-				<SwiperSlide>
-					<div className="goalkeeper">
-						<div className="goalkeeper-image"></div>
-						<div className="player-info">
-							<div className="player-name-container">
-								<div className="info-name">
-									<span>Name</span>
-								</div>
-								<div className="player-name">
-									<span>Ramsdale</span>
-								</div>
-							</div>
-
-							<div className="team-container">
-								<div className="info-name">
-									<span>Team</span>
-								</div>
-								<div className="info-stat">
-									<span>ARS</span>
-								</div>
-							</div>
-
-							<div className="form">
-								<div className="info-name">
-									<span>Form</span>
-								</div>
-								<div className="info-stat">
-									<span>8.0</span>
-								</div>
-							</div>
-
-							<div className="opponent">
-								<div className="info-name">
-									<span>Opponent</span>
-								</div>
-								<div className="info-stat">
-									<span>WOL(H)</span>
-								</div>
-							</div>
-
-							<div className="opponentStrength">
-								<div className="info-name">
-									<span>Opp. Strength</span>
-								</div>
-								<div className="info-stat">
-									<span>3</span>
-								</div>
-							</div>
-						</div>
-					</div>
-				</SwiperSlide>
-
-				<SwiperSlide>
-					<div className="goalkeeper">
-						<div className="goalkeeper-image"></div>
-						<div className="player-info">
-							<div className="player-name-container">
-								<div className="info-name">
-									<span>Name</span>
-								</div>
-								<div className="player-name">
-									<span>Ramsdale</span>
-								</div>
-							</div>
-
-							<div className="team-container">
-								<div className="info-name">
-									<span>Team</span>
-								</div>
-								<div className="info-stat">
-									<span>ARS</span>
-								</div>
-							</div>
-
-							<div className="form">
-								<div className="info-name">
-									<span>Form</span>
-								</div>
-								<div className="info-stat">
-									<span>8.0</span>
-								</div>
-							</div>
-
-							<div className="opponent">
-								<div className="info-name">
-									<span>Opponent</span>
-								</div>
-								<div className="info-stat">
-									<span>WOL(H)</span>
-								</div>
-							</div>
-
-							<div className="opponentStrength">
-								<div className="info-name">
-									<span>Opp. Strength</span>
-								</div>
-								<div className="info-stat">
-									<span>3</span>
-								</div>
-							</div>
-						</div>
-					</div>
-				</SwiperSlide>
-
-				<SwiperSlide>
-					<div className="goalkeeper">
-						<div className="goalkeeper-image"></div>
-						<div className="player-info">
-							<div className="player-name-container">
-								<div className="info-name">
-									<span>Name</span>
-								</div>
-								<div className="player-name">
-									<span>Ramsdale</span>
-								</div>
-							</div>
-
-							<div className="team-container">
-								<div className="info-name">
-									<span>Team</span>
-								</div>
-								<div className="info-stat">
-									<span>ARS</span>
-								</div>
-							</div>
-
-							<div className="form">
-								<div className="info-name">
-									<span>Form</span>
-								</div>
-								<div className="info-stat">
-									<span>8.0</span>
-								</div>
-							</div>
-
-							<div className="opponent">
-								<div className="info-name">
-									<span>Opponent</span>
-								</div>
-								<div className="info-stat">
-									<span>WOL(H)</span>
-								</div>
-							</div>
-
-							<div className="opponentStrength">
-								<div className="info-name">
-									<span>Opp. Strength</span>
-								</div>
-								<div className="info-stat">
-									<span>3</span>
-								</div>
-							</div>
-						</div>
-					</div>
-				</SwiperSlide>
+						</SwiperSlide>
+					);
+				})}
 			</Swiper>
 		</section>
 	);
