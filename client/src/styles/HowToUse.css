@@ -15,8 +15,8 @@
   padding: 1rem 0 0 0.5rem;
 }
 
-p,
-span {
+.how-to-use-container p,
+.how-to-use-container span {
   line-height: 2;
   word-spacing: 1.2px;
   padding: 0 1rem 1rem;
@@ -30,8 +30,8 @@ span {
         grid-template-columns: repeat(2, 1fr);
     grid-column-gap: 20px;
   }
-  p,
-  span {
+  .how-to-use-container p,
+  .how-to-use-container span {
     font-size: 12px;
   }
 }
