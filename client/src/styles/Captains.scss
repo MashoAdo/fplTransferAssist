@@ -1,0 +1,26 @@
+//mixins
+@mixin flexDirection($x, $y) {
+	display: flex;
+	flex-direction: $x;
+	justify-content: $y;
+	align-items: center;
+}
+
+.captains-container {
+	@include flexDirection(row, space-between);
+}
+
+.captain {
+	width: 250px;
+	// border: 2px solid red;
+}
+
+// .captain-image {
+// 	background: url("https://i.pinimg.com/236x/b9/bd/10/b9bd10217b17480b17c22bae6888d6da.jpg");
+// 	height: 200px;
+// 	width: 100%;
+// 	background-repeat: no-repeat;
+// 	background-size: cover;
+// 	background-position: center;
+// 	// border: 2px solid red;
+// }

@@ -1,0 +1,31 @@
+// mixins
+@mixin flexDirection($x, $y) {
+	display: flex;
+	flex-direction: $x;
+	justify-content: $y;
+	align-items: center;
+}
+
+.top5Gks-container {
+	@include flexDirection(row, space-between);
+}
+
+.goalkeeper {
+	width: 250px;
+}
+
+.goalkeeper-image {
+	background: url("https://i.pinimg.com/236x/c8/e8/48/c8e84824daddb8a121b9b443ebd25f6f.jpg");
+	height: 200px;
+	width: 100%;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+// media queries
+//  reduce the player cards width to make all the cards fit in different screen sizes
+@media screen and (min-width: 750px) {
+	.goalkeeper {
+		width: 200px;
+	}
+}

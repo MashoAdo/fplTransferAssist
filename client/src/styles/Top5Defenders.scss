@@ -1,0 +1,30 @@
+@mixin flexDirection($x, $y) {
+	display: flex;
+	flex-direction: $x;
+	justify-content: $y;
+	align-items: center;
+}
+
+.top5Gks-container {
+	@include flexDirection(row, space-between);
+}
+
+.defender {
+	width: 250px;
+}
+
+.defender-image {
+	background: url("https://media.gettyimages.com/photos/trent-alexanderarnold-of-liverpool-during-the-premier-league-match-picture-id1354467347?k=20&m=1354467347&s=612x612&w=0&h=QUQvw9OOTlW0QTgipsHjMpfB-HrypEVjZ3FtRCaJApw=");
+	height: 200px;
+	width: 100%;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+// media queries
+//  reduce the player cards width to make all the cards fit in different screen sizes
+@media screen and (min-width: 750px) {
+	.defender {
+		width: 200px;
+	}
+}

@@ -1,0 +1,36 @@
+.longTerm-players {
+	margin: 2rem;
+}
+
+table {
+	background-color: hsl(0, 0%, 95%);
+	// padding: 1rem 0.5rem;
+}
+th,
+td {
+	padding: 0.5rem;
+	background-color: hsl(0, 0%, 100%);
+}
+
+// media queries
+@media screen and (min-width: 600px) {
+	th,
+	td {
+		padding: 0.8rem;
+	}
+}
+
+@media screen and (min-width: 800px) {
+	th,
+	td {
+		padding: 1rem;
+		font-size: 12px;
+	}
+}
+
+@media screen and (min-width: 1000px) {
+	th,
+	td {
+		padding: 1rem 1.5rem;
+	}
+}
