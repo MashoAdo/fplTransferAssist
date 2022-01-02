@@ -3,7 +3,12 @@ import "../styles/Top5Fowards.css";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper-bundle.css";
 
-function Top5Fowards() {
+function Top5Fowards({ strikers }) {
+	var top5Strikers = strikers
+		.sort((a, b) => {
+			return a.opponentStrength[0] - b.opponentStrength[0];
+		})
+		.slice(0, 5);
 	return (
 		<section className="players-section top5Fowards">
 			<h2 className="category-heading">Fowards</h2>
@@ -37,310 +42,83 @@ function Top5Fowards() {
 					},
 				}}
 			>
-				<SwiperSlide>
-					<div className="foward">
-						<div className="foward-image"></div>
-						<div className="player-info">
-							<div className="player-name-container">
-								<div className="info-name">
-									<span>Name</span>
-								</div>
-								<div className="player-name">
-									<span>Lukaka</span>
-								</div>
-							</div>
+				{top5Strikers.map((striker, index) => {
+					return (
+						<SwiperSlide key={index}>
+							<div className="foward">
+								<div
+									className="foward-image"
+									style={{
+										backgroundImage: `url(
+											https://resources.premierleague.com/premierleague/photos/players/110x140/p${striker.imageString}.png
+										)`,
+										height: "200px",
+										width: " 100%",
+										backgroundRepeat: " no-repeat",
+										backgroundSize: " cover",
+									}}
+								></div>
+								<div className="player-info">
+									<div className="player-name-container">
+										<div className="info-name">
+											<span>Name</span>
+										</div>
+										<div className="player-name">
+											<span>{striker.web_name}</span>
+										</div>
+									</div>
 
-							<div className="team-container">
-								<div className="info-name">
-									<span>Team</span>
-								</div>
-								<div className="info-stat">
-									<span>CHE</span>
-								</div>
-							</div>
+									<div className="team-container">
+										<div className="info-name">
+											<span>Team</span>
+										</div>
+										<div className="info-stat">
+											<span>{striker.teamName}</span>
+										</div>
+									</div>
 
-							<div className="form">
-								<div className="info-name">
-									<span>Form</span>
-								</div>
-								<div className="info-stat">
-									<span>8.0</span>
-								</div>
-							</div>
+									<div className="form">
+										<div className="info-name">
+											<span>Form</span>
+										</div>
+										<div className="info-stat">
+											<span>{striker.form}</span>
+										</div>
+									</div>
 
-							<div className="threat">
-								<div className="info-name">
-									<span>Threat</span>
-								</div>
-								<div className="info-stat">
-									<span>230</span>
-								</div>
-							</div>
+									<div className="threat">
+										<div className="info-name">
+											<span>Threat</span>
+										</div>
+										<div className="info-stat">
+											<span>{striker.threat}</span>
+										</div>
+									</div>
 
-							<div className="opponent">
-								<div className="info-name">
-									<span>Opponent</span>
-								</div>
-								<div className="info-stat">
-									<span>NEW(H)</span>
-								</div>
-							</div>
+									<div className="opponent">
+										<div className="info-name">
+											<span>Opponent</span>
+										</div>
+										<div className="info-stat">
+											<span>
+												{striker.opponentsName[0]} ({striker.homeOrAway[0]} )
+											</span>
+										</div>
+									</div>
 
-							<div className="opponentStrength">
-								<div className="info-name">
-									<span>Opp. Strength</span>
-								</div>
-								<div className="info-stat">
-									<span>3</span>
-								</div>
-							</div>
-						</div>
-					</div>
-				</SwiperSlide>
-
-				<SwiperSlide>
-					<div className="foward">
-						<div className="foward-image"></div>
-						<div className="player-info">
-							<div className="player-name-container">
-								<div className="info-name">
-									<span>Name</span>
-								</div>
-								<div className="player-name">
-									<span>Lukaka</span>
+									<div className="opponentStrength">
+										<div className="info-name">
+											<span>Opp. Strength</span>
+										</div>
+										<div className="info-stat">
+											<span>{striker.opponentStrength[0]}</span>
+										</div>
+									</div>
 								</div>
 							</div>
-
-							<div className="team-container">
-								<div className="info-name">
-									<span>Team</span>
-								</div>
-								<div className="info-stat">
-									<span>CHE</span>
-								</div>
-							</div>
-
-							<div className="form">
-								<div className="info-name">
-									<span>Form</span>
-								</div>
-								<div className="info-stat">
-									<span>8.0</span>
-								</div>
-							</div>
-
-							<div className="threat">
-								<div className="info-name">
-									<span>Threat</span>
-								</div>
-								<div className="info-stat">
-									<span>230</span>
-								</div>
-							</div>
-
-							<div className="opponent">
-								<div className="info-name">
-									<span>Opponent</span>
-								</div>
-								<div className="info-stat">
-									<span>NEW(H)</span>
-								</div>
-							</div>
-
-							<div className="opponentStrength">
-								<div className="info-name">
-									<span>Opp. Strength</span>
-								</div>
-								<div className="info-stat">
-									<span>3</span>
-								</div>
-							</div>
-						</div>
-					</div>
-				</SwiperSlide>
-
-				<SwiperSlide>
-					<div className="foward">
-						<div className="foward-image"></div>
-						<div className="player-info">
-							<div className="player-name-container">
-								<div className="info-name">
-									<span>Name</span>
-								</div>
-								<div className="player-name">
-									<span>Lukaka</span>
-								</div>
-							</div>
-
-							<div className="team-container">
-								<div className="info-name">
-									<span>Team</span>
-								</div>
-								<div className="info-stat">
-									<span>CHE</span>
-								</div>
-							</div>
-
-							<div className="form">
-								<div className="info-name">
-									<span>Form</span>
-								</div>
-								<div className="info-stat">
-									<span>8.0</span>
-								</div>
-							</div>
-
-							<div className="threat">
-								<div className="info-name">
-									<span>Threat</span>
-								</div>
-								<div className="info-stat">
-									<span>230</span>
-								</div>
-							</div>
-
-							<div className="opponent">
-								<div className="info-name">
-									<span>Opponent</span>
-								</div>
-								<div className="info-stat">
-									<span>NEW(H)</span>
-								</div>
-							</div>
-
-							<div className="opponentStrength">
-								<div className="info-name">
-									<span>Opp. Strength</span>
-								</div>
-								<div className="info-stat">
-									<span>3</span>
-								</div>
-							</div>
-						</div>
-					</div>
-				</SwiperSlide>
-
-				<SwiperSlide>
-					<div className="foward">
-						<div className="foward-image"></div>
-						<div className="player-info">
-							<div className="player-name-container">
-								<div className="info-name">
-									<span>Name</span>
-								</div>
-								<div className="player-name">
-									<span>Lukaka</span>
-								</div>
-							</div>
-
-							<div className="team-container">
-								<div className="info-name">
-									<span>Team</span>
-								</div>
-								<div className="info-stat">
-									<span>CHE</span>
-								</div>
-							</div>
-
-							<div className="form">
-								<div className="info-name">
-									<span>Form</span>
-								</div>
-								<div className="info-stat">
-									<span>8.0</span>
-								</div>
-							</div>
-
-							<div className="threat">
-								<div className="info-name">
-									<span>Threat</span>
-								</div>
-								<div className="info-stat">
-									<span>230</span>
-								</div>
-							</div>
-
-							<div className="opponent">
-								<div className="info-name">
-									<span>Opponent</span>
-								</div>
-								<div className="info-stat">
-									<span>NEW(H)</span>
-								</div>
-							</div>
-
-							<div className="opponentStrength">
-								<div className="info-name">
-									<span>Opp. Strength</span>
-								</div>
-								<div className="info-stat">
-									<span>3</span>
-								</div>
-							</div>
-						</div>
-					</div>
-				</SwiperSlide>
-
-				<SwiperSlide>
-					<div className="foward">
-						<div className="foward-image"></div>
-						<div className="player-info">
-							<div className="player-name-container">
-								<div className="info-name">
-									<span>Name</span>
-								</div>
-								<div className="player-name">
-									<span>Lukaku</span>
-								</div>
-							</div>
-
-							<div className="team-container">
-								<div className="info-name">
-									<span>Team</span>
-								</div>
-								<div className="info-stat">
-									<span>CHE</span>
-								</div>
-							</div>
-
-							<div className="form">
-								<div className="info-name">
-									<span>Form</span>
-								</div>
-								<div className="info-stat">
-									<span>8.0</span>
-								</div>
-							</div>
-
-							<div className="threat">
-								<div className="info-name">
-									<span>Threat</span>
-								</div>
-								<div className="info-stat">
-									<span>230</span>
-								</div>
-							</div>
-
-							<div className="opponent">
-								<div className="info-name">
-									<span>Opponent</span>
-								</div>
-								<div className="info-stat">
-									<span>NEW(H)</span>
-								</div>
-							</div>
-
-							<div className="opponentStrength">
-								<div className="info-name">
-									<span>Opp. Strength</span>
-								</div>
-								<div className="info-stat">
-									<span>3</span>
-								</div>
-							</div>
-						</div>
-					</div>
-				</SwiperSlide>
+						</SwiperSlide>
+					);
+				})}
 			</Swiper>
 		</section>
 	);
