@@ -1,0 +1,59 @@
+footer {
+  background: #800280;
+  color: #ffffff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  padding-top: 1rem;
+}
+
+p {
+  font-size: 12px;
+  margin-bottom: 1rem;
+  line-height: 2;
+  word-spacing: 1.2px;
+}
+
+.contacts {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 1rem;
+}
+
+.contacts span {
+  font-size: 12px;
+  margin-right: 1rem;
+  line-height: 2;
+  word-spacing: 1.2px;
+}
+
+.socials a {
+  color: #ffffff;
+}
+
+.socials a:nth-child(1) {
+  margin-right: 0.7rem;
+}
+/*# sourceMappingURL=Footer.css.map */
