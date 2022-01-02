@@ -3,17 +3,13 @@ const request = require("request");
 const cors = require("cors");
 
 const app = express();
-var corsOptions = {
-	origin: "http://127.0.0.1:5500/client/public/index.html",
-};
+// var corsOptions = {
+// 	origin: "http://127.0.0.1:5500/client/public/index.html",
+// };
 app.use(cors());
 
 app.get("/", (req, res) => {
 	res.sendFile(__dirname + "/index.html");
-});
-
-app.get("/test", (req, res) => {
-	res.json({ msg: "connected to backend" });
 });
 
 app.get("/fetchbootstrap", (req, res) => {
