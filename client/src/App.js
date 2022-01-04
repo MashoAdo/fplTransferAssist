@@ -47,10 +47,7 @@ function App() {
 	// fetch data from our server
 	useEffect(() => {
 		axios
-			.all([
-				axios.get("http://localhost:4001/fetchbootstrap"),
-				axios.get("http://localhost:4001/fixtures"),
-			])
+			.all([axios.get("/fetchbootstrap"), axios.get("/fixtures")])
 			.then((responses) => {
 				// destructure responses from the above two get requests
 				var fetchbootstrapResponse = responses[0];
@@ -119,7 +116,7 @@ function App() {
 					player.chance_of_playing_this_round < 75 ||
 					player.chance_of_playing_next_round < 75
 				) {
-					return;
+					return null;
 				} else {
 					return player.element_type === 2;
 				}
@@ -191,7 +188,7 @@ function App() {
 
 		console.log(longTermPlayers);
 		// get current event id
-		var currentEventId = events.find((event) => event.is_next == true).id;
+		var currentEventId = events.find((event) => event.is_next === true).id;
 
 		function addProperties(element) {
 			element.forEach((individualElement) => {
@@ -206,7 +203,7 @@ function App() {
 				for (let i = event; i <= event + 2; i++) {
 					// get all matches for current gameweek
 					var currentGameWeekFixturesFunction = (i) => {
-						return fixtures.filter((fixture) => fixture.event == i);
+						return fixtures.filter((fixture) => fixture.event === i);
 					};
 					var currentGameWeekFixtures = currentGameWeekFixturesFunction(i);
 
@@ -266,7 +263,7 @@ function App() {
 
 	return (
 		<div className="App">
-			{/* {error ? <h1>Error Occurred please refresh</h1> : null} */}
+			{error && <h1>Error Occurred please refresh</h1>}
 			{loading ? (
 				"Loading"
 			) : (
