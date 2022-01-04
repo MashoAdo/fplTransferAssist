@@ -8,7 +8,7 @@ const app = express();
 app.use(cors());
 
 if (process.env.NODE_ENV === "production") {
-	app.use(express.static(path.resolve(__dirname, "/client/build")));
+	app.use(express.static("/client/build"));
 
 	//FIRST Api endpoints gives priority to our backend so that node serves data fetched from our request
 	app.get("/fetchbootstrap", (req, res) => {
@@ -42,7 +42,7 @@ if (process.env.NODE_ENV === "production") {
 
 	// All other GET requests not handled before will return our React app
 	app.get("*", (req, res) => {
-		res.sendFile(path.resolve(__dirname, "/client/build/index.html"));
+		res.sendFile(path.join(__dirname, "/client/build/index.html"));
 	});
 }
 
