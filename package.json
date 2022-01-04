@@ -5,13 +5,17 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon run"
+    "run": "nodemon run",
+    "start": "node server.js",
+    "build": "cd client && npm run build",
+    "install": "cd client && npm install",
+    "heroku-psotbuild": "npm run install && npm run build"
   },
   "author": "Masho Ado Nache",
   "license": "ISC",
   "dependencies": {
     "cors": "^2.8.5",
-    "express": "^4.17.1",
+    "express": "^4.17.2",
     "nodemon": "^2.0.15",
     "request": "^2.88.2"
   }
