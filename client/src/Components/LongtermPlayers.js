@@ -4,7 +4,6 @@ import "../styles/LongTermPlayers.css";
 function LongtermPlayers({ longTermPlayers }) {
 	// var finalLongtermPlayers = longtermPlayers.
 
-	console.log(longTermPlayers);
 	return (
 		<section className="longTerm-players">
 			<h1 className="section-heading">Long Term Players</h1>

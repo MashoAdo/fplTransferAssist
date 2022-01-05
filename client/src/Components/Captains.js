@@ -10,7 +10,6 @@ function Captains({ captains }) {
 		})
 		.slice(0, 3);
 
-	console.log(finalCaptains);
 	return (
 		<section className="players-section">
 			<h1 className="section-heading">Top 3 Captains this Week</h1>

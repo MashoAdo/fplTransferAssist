@@ -14,7 +14,6 @@ function Top5Gks({ goalkeepers }) {
 			return a.opponentStrength[0] - b.opponentStrength[0];
 		})
 		.slice(0, 5);
-	console.log(top5Gks);
 
 	return (
 		<section className="players-section top5GKs">

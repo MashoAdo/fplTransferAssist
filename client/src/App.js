@@ -54,7 +54,6 @@ function App() {
 				var fixturesResponse = responses[1];
 				var bootstrapData = fetchbootstrapResponse.data;
 				var fixturesData = fixturesResponse.data;
-				// console.log(bootstrapData.elements);
 
 				dispatch({
 					type: "FETCH_SUCCESS",
@@ -73,9 +72,6 @@ function App() {
 
 	const [state, dispatch] = useReducer(reducer, initialState);
 	const { teams, players, loading, error, events, fixtures } = state;
-
-	console.log(state);
-	console.log(loading);
 
 	if (loading === true) {
 		console.log("loading");
@@ -97,7 +93,6 @@ function App() {
 			player["imageString"] = imageString;
 			player["teamName"] = teamName;
 		});
-		// console.log(players);
 
 		// get players in each position and sort them based on form /threatand get the first eight/ten players
 		// goalkeepers
@@ -133,8 +128,6 @@ function App() {
 			})
 			.slice(0, 8);
 
-		// console.log(defenders);
-
 		// midfielders
 		var midfielders = players
 			.filter((player) => player.element_type === 3)
@@ -145,7 +138,6 @@ function App() {
 			.sort((a, b) => {
 				return b.threat - a.threat;
 			});
-		// console.log(midfielders);
 
 		// strikers
 		var strikers = players
@@ -170,7 +162,6 @@ function App() {
 			})
 			.slice(0, 7);
 
-		// console.log(captains);
 		// longterm players
 		var longTermPlayers = players
 			.sort((a, b) => {
@@ -186,7 +177,6 @@ function App() {
 			})
 			.slice(0, 15);
 
-		console.log(longTermPlayers);
 		// get current event id
 		var currentEventId = events.find((event) => event.is_next === true).id;
 
