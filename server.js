@@ -9,7 +9,7 @@ app.use(cors());
 
 app.use(express.static(path.join(__dirname, "/client/build")));
 
-//FIRST Api endpoints gives priority to our backend so that node serves data fetched from our request
+//First two API endpoints gives priority to our data being fetched by the native request module.
 app.get("/fetchbootstrap", (req, res) => {
 	request(
 		"https://fantasy.premierleague.com/api/bootstrap-static/",
