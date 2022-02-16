@@ -37,6 +37,8 @@ function App() {
 					loading: false,
 					teams: {},
 					players: {},
+					fixtures: {},
+					events: {},
 					error: `${action.error}`,
 				};
 			default:
@@ -70,21 +72,17 @@ function App() {
 			});
 	}, []);
 
-	const [state, dispatch] = useReducer(reducer, initialState);
-	const { teams, players, loading, error, events, fixtures } = state;
+	const [newState, dispatch] = useReducer(reducer, initialState);
+	const { loading, teams, players, fixtures, events, error } = newState;
 
 	if (loading === true) {
-		console.log("loading");
 	} else {
-		console.log("completed");
-
 		//add images string(used to fetch dynamic image for each player) and short team name to each player
 		players.forEach((player) => {
 			let imageString;
 			let teamName;
 			var imageStringJpg = player.photo;
 			// use Regex to find unique number for each image and join into one string
-			// console.log(imageStringJpg.match(/\d/g).join(""));
 			imageString = imageStringJpg.match(/\d/g).join("");
 			teamName = teams.find(
 				(team) => player.team_code === team.code
@@ -198,7 +196,7 @@ function App() {
 					var currentGameWeekFixtures = currentGameWeekFixturesFunction(i);
 
 					for (let fixture of currentGameWeekFixtures) {
-						// check if the fixture contains the goalkeepers team and add the opponents information into variables declared.
+						// check if the fixture contains the goalkeepers team and add the opponents information into variables declared above.
 						if (fixture.team_a === individualElement.team) {
 							homeOrAway.push("(H)");
 							FDR.push(fixture.team_h_difficulty);
